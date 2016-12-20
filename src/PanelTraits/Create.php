@@ -25,6 +25,11 @@ trait Create
         // if there are any relationships available, also sync those
         $this->syncPivot($item, $data);
 
+        if (method_exists($item, 'uploadImages')) {
+            $item->uploadImages(request());
+        }
+
+
         return $item;
     }
 

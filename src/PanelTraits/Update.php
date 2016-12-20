@@ -21,9 +21,13 @@ trait Update
     public function update($id, $data)
     {
         $item = $this->model->findOrFail($id);
-        $updated = $item->update($this->compactFakeFields($data, 'update'));
 
+        $updated = $item->update($this->compactFakeFields($data, 'update'));
         /*if ($updated) */$this->syncPivot($item, $data, 'update');
+
+        if (method_exists($item, 'uploadImages')) {
+            $item->uploadImages(request());
+        }
 
         return $item;
     }

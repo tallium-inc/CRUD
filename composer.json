@@ -11,6 +11,12 @@
         "admin interface",
         "CMS"
     ],
+	"repositories" : [
+        {
+          "type": "vcs",
+          "url": "https://github.com/tallium-inc/EloquentDataTable"
+        }
+	],
     "homepage": "https://github.com/laravel-backpack/CRUD",
     "license": "MIT",
     "authors": [

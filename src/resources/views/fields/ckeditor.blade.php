@@ -1,3 +1,9 @@
+
+<style>
+    .cke_button__image, .cke_button__oembed {
+        display:none !important;
+    }
+</style>
 <!-- CKeditor -->
 <div @include('crud::inc.field_wrapper_attributes') >
     <label>{{ $field['label'] }}</label>
